@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Function Returns</title>
+</head>
+<body>  
+  <script>
+    // this function console logs a random number whenever it's called
+    function printRandomNumber() {
+      console.log(Math.floor(Math.random() * 10));
+    }  
+
+    // this function RETURNS a random number that we can store in a variable and use at a later point in time
+    function makeRandomNumber() {
+      return Math.floor(Math.random() * 10);
+    }
+
+    // immediately console log a random number
+    printRandomNumber();
+
+    // this won't work, because that function doesn't return anything. variable "test" will be undefined.
+    var test = printRandomNumber();
+
+    // but with the other function, we CAN save the random number...
+    var randy = makeRandomNumber();
+
+    document.onkeyup = function(event) {
+      // ...and use it again later on
+      randy++;
+
+      console.log(randy);
+    };
+  </script>
+</body>
+</html>

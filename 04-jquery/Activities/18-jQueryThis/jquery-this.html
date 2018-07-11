@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>jQuery this</title>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+  <!-- these buttons have a custom attribute called "data-name" that doesn't do anything other than hold extra data/info -->
+  <button class="btn" data-name="joe">click me</button>
+  <button class="btn" data-name="jenny">no, click me</button>
+  <button class="btn" data-name="jill">please click me</button>
+
+  <script>
+    // click event attached to all elements with class "btn"
+    $(".btn").on("click", function() {
+      // how do we know which button was clicked? we can use "this"
+      console.log(this);
+
+      // but if we want to use "this" in the context of jQuery, we would need to wrap it in a jQuery selector
+      console.log($(this).attr("data-name"));
+    });
+  </script>
+</body>
+</html>
